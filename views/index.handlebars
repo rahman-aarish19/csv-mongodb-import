@@ -26,6 +26,7 @@
                 <th scope="col">Diabetes Pedigree Function (DPF)</th>
                 <th scope="col">Age</th>
                 <th scope="col">Result</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -40,6 +41,17 @@
                 <td>{{diabetesPedigreeFunction}}</td>
                 <td>{{age}}</td>
                 <td>{{result}}</td>
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-default" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Edit</a>
+                            <a class="dropdown-item" href="#">Delete</a>
+                        </div>
+                    </div>
+                </td>
             </tr>
             {{/each}}
         </tbody>

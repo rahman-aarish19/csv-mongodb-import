@@ -1,5 +1,6 @@
 body {
     padding-top: 10px;
+    font-family: 'Dosis', sans-serif;
 }
 
 .container-fluid {
@@ -14,4 +15,10 @@ form {
 input, button {
     border-radius: 0px !important;
     height: 45px;
+}
+
+#dropdownMenuButton {
+    border-radius: 50% !important;
+    width: 35px;
+    height: 35px;
 }
