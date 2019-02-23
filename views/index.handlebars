@@ -1,6 +1,6 @@
-<div class="container">
-    <h1 class="text-center display-4 my-4">Import CSV File</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+<div class="container-fluid">
+    <h1 class="text-center display-6 my-4">Import Dataset</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="mb-5">
         {{#if message}}
         <div class="alert alert-info">
             <p>{{message}}</p>
@@ -12,4 +12,37 @@
         </div>
         <input type="submit" value="Submit" class="btn btn-primary btn-block">
     </form>
+
+    {{#if dataset}}
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No. Of Pregnancies</th>
+                <th scope="col">Glucose</th>
+                <th scope="col">Blood Pressure</th>
+                <th scope="col">Skin Thickness</th>
+                <th scope="col">Insulin Level</th>
+                <th scope="col">Body Mass Ratio (BMI)</th>
+                <th scope="col">Diabetes Pedigree Function (DPF)</th>
+                <th scope="col">Age</th>
+                <th scope="col">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dataset}}
+            <tr>
+                <th scope="row">{{noOfPregnancies}}</th>
+                <td>{{glucose}}</td>
+                <td>{{bloodPressure}}</td>
+                <td>{{skinThickness}}</td>
+                <td>{{insulinLevel}}</td>
+                <td>{{bodyMassRatio}}</td>
+                <td>{{diabetesPedigreeFunction}}</td>
+                <td>{{age}}</td>
+                <td>{{result}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
 </div>

@@ -1,5 +1,13 @@
+body {
+    padding-top: 10px;
+}
+
+.container-fluid {
+    width: 90%;
+}
+
 form {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
 }
 

@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const { upload } = require('./helpers/upload');
 const { readCSVFile } = require('./helpers/readFile');
+const { DiabeticDataset } = require('./models/diabetic_dataset');
 
 mongoose.connect('mongodb://localhost:27017/sample-data', { useNewUrlParser: true })
     .then(() => console.log('Connected to MongoDB server...'))
@@ -21,7 +22,13 @@ app.set('view engine', 'handlebars');
 app.use(express.static('./public'));
 
 app.get('/', async (req, res) => {
-    res.render('index');
+    const dataset = await DiabeticDataset.find();
+
+    if (dataset.length > 0) {
+        res.render('index', {
+            dataset: dataset
+        });
+    }
 });
 
 app.post('/upload', async (req, res, next) => {
