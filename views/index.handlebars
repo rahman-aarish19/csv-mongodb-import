@@ -1,0 +1,15 @@
+<div class="container">
+    <h1 class="text-center display-4 my-4">Import CSV File</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        {{#if message}}
+        <div class="alert alert-info">
+            <p>{{message}}</p>
+        </div>
+        {{/if}}
+        <div class="custom-file mb-3">
+            <input type="file" name="uploadCSVFile" id="file" class="custom-file-input">
+            <label for="file" class="custom-file-label">Choose File</label>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary btn-block">
+    </form>
+</div>
